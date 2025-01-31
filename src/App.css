@@ -1,0 +1,113 @@
+/* Make body fill screen and remove default margin/padding */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* Main container that holds navbar and content in a column (stack) */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #333;
+  color: white;
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Logo | space | burger or nav links */
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+/* Logo on the left */
+.navbar-logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Nav links container (desktop) */
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* Hide the burger button on desktop by default */
+.burger-button {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* The dropdown menu that appears on mobile toggling */
+.dropdown-menu {
+  background-color: #333;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Content area, using grid to display the table area */
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr; /* single-column on mobile */
+  grid-gap: 1rem;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th, td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/* Login container */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 5rem auto;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.login-container h2 {
+  margin-bottom: 1rem;
+}
+
+.login-container input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+/* Media query for smaller screens to show/hide burger and menu */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide normal nav links */
+  }
+  .burger-button {
+    display: block; /* show burger button */
+    justify-self: end;
+  }
+}
